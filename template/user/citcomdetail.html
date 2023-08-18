@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>V-Mart </title>
+	<!-- Bootstrap core CSS -->
+	<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+	<!-- Fontawesome CSS -->
+	<link href="{% static 'css/all.css'%}" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="{% static 'css/style.css'%}" rel="stylesheet">
+</head>
+<body style="background-color:#d7e4f7;">
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+               <img src="{% static 'images/logo_081.jpg'%}" alt="logo" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link active" href="{% url 'uhome' %} ">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     {% comment %} <a class="nav-link" href="about.html">About</a> {% endcomment %}
+                  </li>
+                  <li class="nav-item">
+                     {% comment %} <a class="nav-link" href="reg">Registration</a> {% endcomment %}
+                  </li>
+                  
+                 
+                  
+                
+                  
+               </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="services-bar">
+            <h1 class="my-4">More Details</h1>
+
+    <div class="about-main">
+        <div class="row">
+           <div class="col-lg-6">
+              <h2>{{cm.name}}</h2>
+              {% comment %} <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> {% endcomment %}
+              <h5>Business name : {{cm.bname}}</h5>
+              <h5>Email : {{cm.email}}</h5>
+              <h5>Location : {{cm.place}}</h5>
+              <h5>Address : {{cm.address}}</h5>
+              <h5>City : {{cm.city}}</h5>
+              <h5>District : {{cm.dist}}</h5>
+              <h5>Contact : {{cm.contact}}</h5>
+              <h5>State : {{cm.state}}</h5>
+              
+              
+                        </div>
+           <div class="col-lg-6">
+              <img class="img-fluid rounded" src="{{cm.bimg.url}}" alt="" />
+           </div>
+        </div>
+        <!-- /.row -->
+    </div>
+</div>
+</div>
+    <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    </body>
+    </html>

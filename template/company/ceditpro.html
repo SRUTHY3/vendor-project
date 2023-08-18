@@ -1,0 +1,229 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>V-Mart </title>
+	<!-- Bootstrap core CSS -->
+	<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+	<!-- Fontawesome CSS -->
+	<link href="{% static 'css/all.css'%}" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="{% static 'css/style.css'%}" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+              <img src="{% static 'images/logo_081.jpg'%}" alt="logo" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  {% comment %} <li class="nav-item">
+                     <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="services.html">Services</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Portfolio
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                        <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
+                        <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
+                        <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
+                        <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
+                        <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+                     </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Blog
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                        <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
+                        <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
+                        <a class="dropdown-item" href="blog-post.html">Blog Post</a>
+                     </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Pages
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                        <a class="dropdown-item" href="faq.html">FAQ</a>
+                        <a class="dropdown-item" href="404.html">404</a>
+                        <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+                     </div>
+                  </li> {% endcomment %}
+                  <li class="nav-item">
+                     <a class="nav-link active" href="{% url 'chome' %}">Back</a>
+                  </li>
+               </ul>
+            </div>
+        </div>
+    </nav>
+	
+	<!-- full Title -->
+	
+
+    <!-- Page Content -->
+    <div class="container">
+		
+
+      
+
+      <!-- Contact Form -->
+      <!-- In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
+      <div class="row">
+        <div class="col-lg-8 mb-4 contact-left">
+          <h3>Update Profile</h3>
+          <form action="" method='POST' enctype="multipart/form-data" name="sentMessage" id="contactForm" novalidate>
+            {% csrf_token %}
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Name:</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{pro.name}}">
+                <p class="help-block"></p>
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label> Business Name:</label>
+                <input type="text" class="form-control" id="name" name="bname" value="{{pro.bname}}">
+                <p class="help-block"></p>
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Email:</label>
+                <input type="email" class="form-control" id="email" name="email"  value="{{pro.email}}" >
+              </div>
+            </div>
+            <div class="control-group form-group">
+              <div class="controls">
+                <label>Place:</label>
+                <input type="text" class="form-control" id="place" name="place"  value="{{pro.place}}">
+              </div>
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                  <label>Address:</label>
+                  <input type="text" class="form-control" id="address" name="address"  value="{{pro.address}}">
+                </div>
+              </div>
+              <div class="control-group form-group">
+                <div class="controls">
+              <label for="district">Select District:</label>
+
+              <select id="district" name="dist">
+                <option value="">Select</option>
+                <option value="alappuzha">Alappuzha</option>
+                <option value="ernakulam">Ernakulam</option>
+                <option value="idukki">Idukki</option>
+                <option value="kannur">Kannur</option>
+                <option value="kasaragod">Kasaragod</option>
+                <option value="kollam">Kollam</option>
+                <option value="kottayam">Kottayam</option>
+                <option value="kozhikode">Kozhikode</option>
+                <option value="malappuram">Malappuram</option>
+                <option value="palakkad">Palakkad</option>
+                <option value="pathanamthitta">Pathanamthitta</option>
+                <option value="thiruvananthapuram">Thiruvananthapuram</option>
+                <option value="thrissur">Thrissur</option>
+                <option value="wayanad">Wayanad</option>
+            </select>
+          </div>
+        </div>
+              <div class="control-group form-group">
+                <div class="controls">
+                  <label>City:</label>
+                  <input type="text" class="form-control" id="city" name="city" value="{{pro.city}}">
+                </div>
+              </div>
+              <div class="control-group form-group">
+                <div class="controls">
+                  <label>Phoneno:</label>
+                  <input type="text" class="form-control" id="phoneno" name="contact" value="{{pro.contact}}">
+                </div>
+              </div>
+              <div class="control-group form-group">
+                <div class="controls">
+                  <label>State:</label>
+                  <input type="text" class="form-control" id="state" name="state" value="{{pro.state}}">
+                </div>
+              </div>
+              <div class="control-group form-group">
+                <div class="controls">
+                  <label>Upload Business logo:</label>
+                  <input type="file" class="form-control" id="state" name="bimg" >
+                </div>
+              </div>
+              <div class="control-group form-group">
+                <div class="controls">
+                  <label>Password:</label>
+                  <input type="text" class="form-control" id="password" name="password" value="{{pro.password}}">
+                </div>
+              </div>
+              
+              
+
+            {% comment %} <div class="control-group form-group">
+              <div class="controls">
+                <label>Message:</label>
+                <textarea rows="5" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+              </div>
+            </div> {% endcomment %}
+
+
+            <div id="success"></div>
+            <!-- For success/fail messages -->
+            <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+          </form>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <script>
+      function showCities() {
+          var districtSelect = document.getElementById("district");
+          var selectedDistrict = districtSelect.value;
+          var selectedCity = "";
+
+          var cityContainer = document.getElementById("cityContainer");
+          var selectedCityElement = document.getElementById("selectedCity");
+
+          if (selectedDistrict !== "") {
+              selectedCity = districtSelect.options[districtSelect.selectedIndex].text;
+              cityContainer.style.display = "block";
+              selectedCityElement.textContent = selectedCity;
+          } else {
+              cityContainer.style.display = "none";
+              selectedCityElement.textContent = "";
+          }
+      }
+  </script>
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+<!-- Contact form JavaScript -->
+{% comment %} <script src="{% static 'js/jqBootstrapValidation.js'%}"></script> {% endcomment %}
+<script src="{% static 'js/contact_me.js'%}"></script>
+</body>
+</html>

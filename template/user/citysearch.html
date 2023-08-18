@@ -1,0 +1,144 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>V-Mart </title>
+	<!-- Bootstrap core CSS -->
+	<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+	<!-- Fontawesome CSS -->
+	<link href="{% static 'css/all.css'%}" rel="stylesheet">
+	<!-- Custom styles for this template -->
+	<link href="{% static 'css/style.css'%}" rel="stylesheet">
+   <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+
+
+       body{
+        background-color:#eee;
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+       }
+
+       .height{
+        height: 100vh;
+       }
+       
+
+       .search{
+       position: relative;
+       box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+         
+       }
+
+       .search input{
+
+        height: 60px;
+        text-indent: 25px;
+        border: 2px solid #d6d4d4;
+
+
+       }
+
+
+       .search input:focus{
+
+        box-shadow: none;
+        border: 2px solid blue;
+
+
+       }
+
+       .search .fa-search{
+
+        position: absolute;
+        top: 20px;
+        left: 16px;
+
+       }
+
+       .search button{
+
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        height: 50px;
+        width: 110px;
+        background: blue;
+
+       }
+      </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+               <img src="{% static 'images/logo_081.jpg'%}" alt="logo" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link active" href="">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     {% comment %} <a class="nav-link"  href="notifi">Notification</a> {% endcomment %}
+                  </li>
+                  
+               </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="slider-main">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+            <ol class="carousel-indicators">
+               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+               <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+               <!-- Slide One - Set the background image for this slide in the line below -->
+               <div class="carousel-item active" style="background-image: url('/static/images/108.jpg')">
+                  <div class="row height d-flex justify-content-center align-items-center">
+
+                     <div class="col-md-8">
+                        <form method="post" >
+                           {% csrf_token %}
+                           {% comment %} <input type="text" name="Location" placeholder="Search..."> {% endcomment %}
+                           {% comment %} <input type="submit" value="Search"> {% endcomment %}
+                       <div class="search">
+                         <i class="fa fa-search"></i>
+                         <input type="text" class="form-control" name="city" placeholder="Search by City" required>
+                         {% comment %} <div class="form-control">
+                           <select class="form-control">
+                               <option data-display="Travel type" class="form-control">Travel type</option>
+                               <option value="1"  >Some option</option>
+                               <option value="2">Another option</option>
+                           </select>
+                       </div> {% endcomment %}
+                         <button class="btn btn-primary" type="submit">Search</button>
+                       </div>
+                     </form>
+                     </div>
+                    
+                   </div>
+               </div>
+               </div>
+              
+            </div>
+            
+        </div>
+    </header>
+    <!-- Page Content -->
+   
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+</body>
+</html>
